@@ -41,10 +41,10 @@ jobs:
           cache: 'gradle'
 
       - name: Version Bump
-        uses: chkfung/android-version-actions@v1.2.1
-        with:
-          gradlePath: app/build.gradle
-          versionCode: ${{ github.run_number }}
+        run: |
+          sed -i 's/versionCode [0-9]\+/versionCode ${{ github.run_number }}/' app/build.gradle
+          sed -i 's/versionName "[^"]\+"/versionName "2.0.${{ github.run_number }}"/' app/build.gradle
+      
 
       - name: Assemble Release Bundle
         run: ./gradlew bundleRelease

@@ -19,9 +19,9 @@ import com.example.basicstatecodelab.ui.theme.BasicStateCodelabTheme
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(16.dp)) {
-        var count by rememberSaveable { mutableStateOf(0) }
+        var count by remember { mutableStateOf(0) }
         if (count > 0 ) {
-            var showTask by rememberSaveable { mutableStateOf(true) }
+            var showTask by remember { mutableStateOf(true) }
             if (showTask) {
                 WellnessTaskItem(
                     onClose = { showTask = false},
