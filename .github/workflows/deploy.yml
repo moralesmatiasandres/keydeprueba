@@ -49,7 +49,7 @@ jobs:
       - name: Setup Authorization With Google Play Store
         run: echo '${{ secrets.GOOGLE_PLAY_API_AUTH }}' > service_account.json
 
-      # Deploy to Internal Channel
+      # Deploy to Internal Channel as
       - name: Deploy to Internal Channel
         uses: r0adkll/upload-google-play@v1.0.19
         with:
