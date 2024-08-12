@@ -21,12 +21,15 @@ jobs:
           java-version: 17
           cache: 'gradle'
 
+      # List files to verify the project structure
+      - name: List files
+        run: ls -R
+
       # Version Bump using sed
       - name: Version Bump
         run: |
           sed -i 's/versionCode [0-9]\+/versionCode ${{ github.run_number }}/' app/build.gradle
           sed -i 's/versionName "[^"]\+"/versionName "2.0.${{ github.run_number }}"/' app/build.gradle
-    
 
       # Assemble Release Bundle
       - name: Assemble Release Bundle
