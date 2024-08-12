@@ -21,6 +21,10 @@ jobs:
           java-version: 17
           cache: 'gradle'
 
+      # List files to verify the project structure
+      - name: List files
+        run: ls -R
+
       # Version Bump using sed on build.gradle.kts
       - name: Version Bump
         run: |
