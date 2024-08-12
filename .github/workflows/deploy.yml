@@ -25,11 +25,11 @@ jobs:
       - name: List files
         run: ls -R
 
-      # Version Bump using sed
+      # Version Bump using sed on build.gradle.kts
       - name: Version Bump
         run: |
-          sed -i 's/versionCode [0-9]\+/versionCode ${{ github.run_number }}/' build.gradle
-          sed -i 's/versionName "[^"]\+"/versionName "2.0.${{ github.run_number }}"/' build.gradle
+          sed -i 's/versionCode [0-9]\+/versionCode ${{ github.run_number }}/' build.gradle.kts
+          sed -i 's/versionName "[^"]\+"/versionName "2.0.${{ github.run_number }}"/' build.gradle.kts
 
       # Assemble Release Bundle
       - name: Assemble Release Bundle
